@@ -50,4 +50,4 @@ require (
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 )
 
-replace github.com/Traceableai/goagent => github.com/varkey98/goagent v0.0.0-20250527100009-6cc4c5ec7840
+replace github.com/Traceableai/goagent =>  github.com/Traceableai/goagent-src v0.12.1-0.20250602173038-b7fd683903b6
