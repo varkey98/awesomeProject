@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/Traceableai/goagent"
 	"github.com/Traceableai/goagent/config"
+	"github.com/Traceableai/goagent/instrumentation/net/traceablehttp"
 	"github.com/gorilla/mux"
 	"io"
 	"io/ioutil"
@@ -21,8 +22,7 @@ func startHttpServer() {
 
 	r := mux.NewRouter()
 	r.Handle("/foo",
-		http.HandlerFunc(fooHandler))
-	//r.Handle("/extcap", traceablehttp.NewHandler(
+		traceablehttp.NewHandler(http.HandlerFunc(fooHandler), "/foo"))
 	//	http.HandlerFunc(extCapHandler), "/extcap"))
 	//r.Handle("/v1/traces", traceablehttp.NewHandler(
 	//	http.HandlerFunc(otlpHttpHandler), "/v1/traces"))
